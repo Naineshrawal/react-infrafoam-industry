@@ -14,8 +14,34 @@ export default {
       }
     },
     fontFamily:{
-      'Poppins': 'Poppins'
+      'Poppins': 'Poppins',
+      'Aclonica': 'Aclonica',
+      'Saira' : 'Saira Stencil One'
     },
+    textColor:{
+      "base-red" : "#F43336"
+    },
+    screens: {
+        'media400': '400px',
+        'media700' : '700px',
+        'sm': '640px',
+        // => @media (min-width: 640px) { ... }
+
+        'md': '768px',
+  
+        'lg': '1024px',
+        // => @media (min-width: 1024px) { ... }
+      },
+      keyframes:  {
+          progress: {
+            '0%' : { transform : 'translatex(-100%)' },
+            '100%' : { transform : 'translatex(0)' },
+            
+          }
+      },
+      animation: {
+        progress : 'progress 2s ease-in-out'
+      }
     
   },
   plugins: [],

@@ -6,13 +6,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-
+import 'swiper/css/navigation'
 import './styles.css';
 
+
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation,Autoplay } from 'swiper/modules';
 
 function Slider() {
+    const progressCircle = useRef(null);
+    const progressContent = useRef(null);
+    const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
   return (
     <>
       <Swiper
@@ -26,38 +33,52 @@ function Slider() {
           depth: 100,
           modifier: 1,
           slideShadows: true,
+          
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        
+        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+        autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        navigation={true}
+        pagination={
+            {clickable: true}
+        }
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src="../../../public/images/mattress-4.jpg" alt='mattress-4' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img src="../../../public/images/Soft-Foam.jpg" alt='Soft-foam'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img src="../../../public/images/Foam-1_2.jpg" alt='foam-1_2'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img src="../../../public/images/mattress-3.jpg" alt='mattress-3'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img src="../../../public/images/foam-4.png" alt='foam-4'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <img src="../../../public/images/foam-5_5.png" alt='foam-5'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <img src="../../../public/images/foam-6.jpg" alt='foam-6'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <img src="../../../public/images/foam-7.png" alt='foam-7'/>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+        <div className="autoplay-progress" slot="container-end">
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle className='bg-gray-400' cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span ref={progressContent}></span>
+        </div>
+        
       </Swiper>
     </>
   )
