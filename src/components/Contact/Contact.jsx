@@ -16,7 +16,24 @@ function Contact() {
               Feel free to reach out using the below details.</p>
           </div>
           <div className='w-full'>
-              <h2 className='text-3xl font-semibold text-[#545454]'>Send Your Message</h2>
+              <h2 className='text-3xl font-semibold text-[#545454] mb-8'>Send Your Message</h2>
+              <form action="" className='flex flex-col max-w-[75%] '>
+                <div className='flex justify-between mb-4'>
+                  <div className='flex flex-col '>
+                    <label htmlFor="name" >Name* :</label>
+                    <input className='p-1 border-[1px] border-black' type="text" name='name' required/>
+                  </div>
+                  <div className='flex flex-col '>
+                    <label htmlFor="number" >Number :</label>
+                    <input className='p-1 border-[1px] border-black' type="number" name='number' />
+                  </div>
+                </div>
+                <label htmlFor="email" >Email* :</label>
+                <input className='p-1 border-[1px] border-black mb-4' type="email" name='email' required/>
+                <label htmlFor="message">Message :</label>
+                <textarea className='p-1 border-[1px] border-black' name="message" rows={4} id="message"></textarea>
+                <button className='w-28 px-4 py-2 mt-4 text-[white] bg-[#F43336]' type='submit'>Send</button>
+              </form>
           </div>
         </div>
       </section>
