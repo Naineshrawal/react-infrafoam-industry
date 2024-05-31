@@ -16,7 +16,8 @@ export default {
     fontFamily:{
       'Poppins': 'Poppins',
       'Aclonica': 'Aclonica',
-      'Saira' : 'Saira Stencil One'
+      'Saira' : 'Saira Stencil One',
+      'RobotoCondensed' : 'Roboto Condensed'
     },
     textColor:{
       "base-red" : "#F43336"

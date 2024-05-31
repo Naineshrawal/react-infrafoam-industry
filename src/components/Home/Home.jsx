@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Slider from '../slider/Slider'
+import BlogList from './BlogList'
+import { blogList } from '../../config/data'
 
 function Home() {
   return (
@@ -218,6 +220,10 @@ function Home() {
               </div>
             </div>
           </div>
+      </section>
+      <section id='blog-list'>
+          <BlogList blogs={blogList} />
+          
       </section>
       <section id='slider' className='max-w-[1440px] mx-auto'>
         <Slider/>
