@@ -14,7 +14,7 @@ function Header() {
         </Link>
       </div>
 
-      <div className={`fixed text-xl sm:text-base text-center  ${hidden} top-0 left-0 h-[100vh] sm:h-16 w-full sm:static sm:flex sm:flex-row flex-col  gap-6 md:gap-20   bg-white sm:justify-end items-center`} >
+      <div className={` text-xl sm:text-base text-center z-10  top-0 left-0 h-[100vh] sm:h-16 w-full fixed sm:static ${hidden} sm:flex sm:flex-row flex-col  gap-6 md:gap-20   bg-white sm:justify-end items-center`} >
         <img width="30px" onClick={()=>setHidden("hidden")} className='sm:hidden  cursor-pointer absolute top-8 right-4' src='../../../public/images/xmark-solid.svg' />
         <img width="100px" className='sm:hidden mx-auto mt-40 mb-8' src='../../../public/images/logo.png' />
           <ul onClick={()=>setHidden('hidden')} className='flex sm:flex-row flex-col mb-8 sm:mb-0 space-y-5 sm:space-y-0 space-x-0 sm:space-x-4 md:space-x-6'>
