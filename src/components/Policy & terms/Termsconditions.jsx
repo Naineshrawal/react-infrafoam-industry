@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTitle } from '../../hooks/useTitle'
 
 function Termsconditions() {
-
+  useTitle("Terms & Conditions")
   useEffect(()=>{
       window.scrollTo(0,0)
   })

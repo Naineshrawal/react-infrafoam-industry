@@ -2,12 +2,15 @@ import React, { useEffect,  } from 'react'
 import { useParams } from 'react-router-dom'
 import { blogList } from '../../config/data';
 import { Link } from 'react-router-dom';
+import { useTitle } from '../../hooks/useTitle';
 const BlogPage = () => {
+    useTitle("Blog")
     const {id} = useParams() 
     let blog = blogList.find(blog=>blog.id===parseInt(id))
 
     useEffect(()=>{
         window.scrollTo(0,0, )
+        
     })
 //     const [blog, setBlog] = useState(null)
 

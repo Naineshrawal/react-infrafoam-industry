@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useTitle } from '../../hooks/useTitle';
 
 
 function BlogItem({
@@ -15,6 +16,7 @@ function BlogItem({
     
 
 }) {
+  useTitle("Blog")
     
   return (
     <div className='w-[full]  md:w-[50%] mx-1 bg-[#f5f5f5]'>

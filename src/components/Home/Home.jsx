@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom'
 import Slider from '../slider/Slider'
 import BlogList from './BlogList'
 import { blogList } from '../../config/data'
+import { useTitle } from '../../hooks/useTitle'
 
 function Home() {
+  useTitle("Home")
   return (
     <>
       <section id="hero" className='section-container bg-[url("../../../public/images/hero-mattress5-bg.jpg")] mt-4 sm:bg-contain  bg-bottom sm:bg-center bg-no-repeat  w-full min-h-[90vh]'>

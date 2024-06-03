@@ -1,10 +1,15 @@
 import React from 'react'
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import emailjs   from '@emailjs/browser'
+import { useTitle } from '../../hooks/useTitle';
 
 
 function Contact() {
       const form = useRef();
+      useTitle("Contact")
+      useEffect(()=>{
+        window.scrollTo(0,0)
+    })
       
       const sendEmail = (e)=>{
             e.preventDefault();
@@ -27,10 +32,7 @@ function Contact() {
                   alert('FAILED...', error.text);
                 },
               );
-              console.log(formName);
-          console.log(formNumber);
-          console.log(formEmail);
-          console.log(formMessage);
+              
           formName.value = ""
           formNumber.value = ""
           formEmail.value = ""

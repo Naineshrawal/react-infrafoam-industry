@@ -1,7 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useTitle } from '../../hooks/useTitle'
 
 function About() {
+  useTitle("About")
   return (
     <>
       <section className='section-container my-10'>
