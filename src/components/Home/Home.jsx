@@ -221,7 +221,7 @@ function Home() {
             </div>
           </div>
       </section>
-      <section id='blog-list'>
+      <section className='section-container flex justify-center mt-20' id='blog-list'>
           <BlogList blogs={blogList} />
           
       </section>

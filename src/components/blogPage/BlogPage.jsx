@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect,  } from 'react'
 import { useParams } from 'react-router-dom'
 import { blogList } from '../../config/data';
 import { Link } from 'react-router-dom';
 const BlogPage = () => {
     const {id} = useParams() 
     let blog = blogList.find(blog=>blog.id===parseInt(id))
+
+    useEffect(()=>{
+        window.scrollTo(0,0, )
+    })
 //     const [blog, setBlog] = useState(null)
 
 
@@ -18,6 +22,7 @@ const BlogPage = () => {
 
   return (
     <>
+    
     <section className="section-container ">
         <Link className='flex justify-center items-center gap-1 bg-gray-400 w-32 rounded-xl mt-4' to='/blog'>
             <span className='font-bold text-xl '>	&#x2B05;</span>

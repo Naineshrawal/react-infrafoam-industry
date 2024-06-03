@@ -3,7 +3,7 @@ import BlogItem from './BlogItem'
 
 function BlogList({blogs}) {
   return (
-    <div className='section-container flex flex-col md:flex-row justify-between'>
+    <div className='max-w-[90%] lg:px-20  flex flex-col md:flex-row justify-between'>
         
         {blogs.map((blog)=>(
             

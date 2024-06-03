@@ -4,9 +4,10 @@ import { blogList } from '../../config/data'
 
 function Blog() {
   return (
-    <div>
-      <BlogList blogs={blogList}/>
-    </div>
+    
+    <section className='section-container flex justify-center mt-20' id='blog-list'>
+        <BlogList blogs={blogList} />
+    </section>
   )
 }
 
