@@ -1,9 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTitle } from '../../hooks/useTitle'
+import MyContext from '../../context/data/MyContext'
 
 function Dashboard() {
+  
   useTitle("Dashboard")
+  const navigate = useNavigate()
+  const logOut = ()=>{
+    localStorage.clear("admin")
+    navigate("/")
+  }
+  const context = useContext(MyContext)
+  const {getAllBlog} = context
+
+  // console.log(getAllBlog);
+
   return (
     <div className='section-container my-10'>
 
@@ -16,9 +28,9 @@ function Dashboard() {
           <h2 className='text-lg font-medium'>Owner</h2>
           <h2 className='text-lg font-medium'><span>Total Blogs :</span> 2</h2>
           <div className='flex gap-2 mt-4'>
-              <button className='px-4 py-2 bg-black text-[white] rounded-lg'>Create Blog</button>
+              <Link to={'/createblog'}><button className='px-4 py-2 bg-black text-[white] rounded-lg'>Create Blog</button></Link>
             <Link>
-              <button className='px-4 py-2 bg-black text-[white] rounded-lg'>Logout</button>
+              <button onClick={logOut} className='px-4 py-2 bg-black text-[white] rounded-lg'>Logout</button>
             </Link>
           </div>
         </div>
@@ -56,37 +68,50 @@ function Dashboard() {
                                     </tr>
                                 </thead>
                                 {/* tbody  */}
-                                <tbody>
-                                    <tr className=" border-b-2" >
-                                        {/* S.No   */}
-                                        <td  className="px-6 py-4">
-                                            {'1.'}
-                                        </td>
-                                        {/* Blog Thumbnail  */}
-                                        <th  scope="row" className="px-6 py-4 font-medium ">
-                                            {/* thumbnail  */}
-                                            <img className='w-16 rounded-lg' src={'https://firebasestorage.googleapis.com/v0/b/blog-fea71.appspot.com/o/blogimage%2FReact%20Introduction.png?alt=media&token=1ba7496b-2cbc-450c-ab1a-57e19882dc76'} alt="thumbnail" />
-                                        </th>
-                                        {/* Blog Title  */}
-                                        <td  className="px-6 py-4">
-                                            {'Mattress blog'}
-                                        </td>
-                                        {/* Blog Category  */}
-                                        <td  className="px-6 py-4">
-                                            {'mattress'}
-                                        </td>
-                                        {/* Blog Date  */}
-                                        <td  className="px-6 py-4">
-                                            {'Jul 25, 2023'}
-                                        </td>
-                                        {/* Delete Blog  */}
-                                        <td  className="px-6 py-4">
-                                            <button className=' px-4 py-1 rounded-lg text-[white] font-bold bg-[#f43336]'>
-                                              {"Delete"}
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                
+                                {getAllBlog? 
+                                <>{getAllBlog.map((item, index)=>{
+                                  
+                                  const {thumbnail, date} = item
+                                  return(
+                                    
+                                      <tbody key={index}>
+                                          <tr className=" border-b-2">
+                                              {/* S.No   */}
+                                              <td  className="px-6 py-4">
+                                                  {index + 1}.
+                                              </td>
+                                              {/* Blog Thumbnail  */}
+                                              <th  scope="row" className="px-6 py-4 font-medium ">
+                                                  {/* thumbnail  */}
+                                                  <img className='w-16 rounded-lg' 
+                                                  src={thumbnail} alt="thumbnail" />
+                                              </th>
+                                              {/* Blog Title  */}
+                                              <td  className="px-6 py-4">
+                                                  {item.blogs.title}
+                                              </td>
+                                              {/* Blog Category  */}
+                                              <td  className="px-6 py-4">
+                                                  {item.blogs.category}
+                                              </td>
+                                              {/* Blog Date  */}
+                                              <td  className="px-6 py-4">
+                                                  {date}
+                                              </td>
+                                              {/* Delete Blog  */}
+                                              <td  className="px-6 py-4">
+                                                  <button className=' px-4 py-1 rounded-lg text-[white] font-bold bg-red-500'>
+                                                    Delete
+                                                  </button>
+                                              </td>
+                                          </tr>
+                                      </tbody>
+                                  
+                                  )
+                                })}</>
+                                :
+                                <h1>Not Found</h1>}
                             </table>
                         </div>
       </div>

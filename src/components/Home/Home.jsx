@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import Slider from '../slider/Slider'
 import BlogList from './BlogList'
-import { blogList } from '../../config/data'
+
+
 import { useTitle } from '../../hooks/useTitle'
+import MyContext from '../../context/data/MyContext'
 
 function Home() {
+  const context = useContext(MyContext)
+  const {getAllBlog} = context
+  
   useTitle("Home")
   return (
     <>
@@ -224,7 +229,7 @@ function Home() {
           </div>
       </section>
       <section className='section-container flex justify-center mt-20' id='blog-list'>
-          <BlogList blogs={blogList} />
+          <BlogList blogs={getAllBlog} />
           
       </section>
       <section id='slider' className='max-w-[1440px] mx-auto'>

@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import {Link, NavLink} from 'react-router-dom'
 
 function Header() {
-
+  
+  
+  
 
   const [hidden, setHidden] = useState("hidden")
-
+  
   return (
     <header id='header' className='section-container flex relative sm:sticky items-center justify-between px-4 py-2  shadow-md text-[#929292] '>
       <div id='logo' className='w-full sm:w-[20%]'>
@@ -24,7 +26,7 @@ function Header() {
                 Home
               </NavLink>
             </li>
-            <a href="#our-products" className='hover:text-[#f43336] font-medium  duration-300'>
+            <a href={"#our-products"} className='hover:text-[#f43336] font-medium  duration-300'>
               Our Products
             </a>
             {/* <li>
@@ -51,11 +53,11 @@ function Header() {
               </NavLink>
             </li>
             <li>
-                <NavLink to='/dashboard'>
+                {true? <NavLink to='/dashboard'>
                       <img className='w-4 mx-auto' src='../../../public/images/dashboard.svg' alt='dashboard-icon' onClick={()=>setHidden('hidden')}/>
                         
                       
-                </NavLink> 
+                </NavLink>:"" }
             </li>
             <NavLink to='/contact'>
                   <button onClick={()=>setHidden('hidden')} className='px-5 py-2 font-bold bg-[#f43336] text-[#fff] '>

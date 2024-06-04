@@ -1,12 +1,24 @@
 import React, { useEffect,  } from 'react'
 import { useParams } from 'react-router-dom'
-import { blogList } from '../../config/data';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useTitle } from '../../hooks/useTitle';
+import MyContext from '../../context/data/MyContext';
+
+
 const BlogPage = () => {
     useTitle("Blog")
+
+    const context = useContext(MyContext)
+    
+    
+        const {getAllBlog} = context
+    
+
     const {id} = useParams() 
-    let blog = blogList.find(blog=>blog.id===parseInt(id))
+    let blog =  getAllBlog.find(blog=>blog.id === parseInt(id))
+
+    
 
     useEffect(()=>{
         window.scrollTo(0,0, )
@@ -25,27 +37,32 @@ const BlogPage = () => {
 
   return (
     <>
-    
+        
+    {blog?
+
+        
     <section className="section-container ">
         <Link className='flex justify-center items-center gap-1 bg-gray-400 w-32 rounded-xl mt-4' to='/blog'>
             <span className='font-bold text-xl '>	&#x2B05;</span>
             <p className='text-[#e3e3ff] hover:text-[#5d5dea]'>Go Back</p>
         </Link>
-        <h1 className='text-2xl sm:text-4xl md:text-5xl font-bold text-center my-10'>{blog.title}</h1>
+        <h1 className='text-2xl sm:text-4xl md:text-5xl font-bold text-center my-10'>{blog.blogs.title}</h1>
         <div className='px-4 sm:px-6 md:px-10 lg:px-20'>
-            <img className='w-full mx-auto'  src={blog.cover} alt="" />
+            <img className='w-full mx-auto'  src={blog.thumbnail} alt="" />
             <div className='flex items-center gap-3 text-[#929292] '>
-                <p className='font-RobotoCondensed capitalize font-medium '>{blog.category}</p>
+                <p className='font-RobotoCondensed capitalize font-medium '>{blog.blogs.category}</p>
                 <div className='flex gap-1'>
                     <img width='14px'  src="../../../public/images/time-gray.svg" alt="hours" />
-                    <span className='text-sm'>{blog.createdAt}</span>
+                    <span className='text-sm'>{blog.date}</span>
                 </div>
             </div>
         </div>
+        <div className='mt-10'>
 
+            {blog.blogs.content}
+        </div>
 
-
-        {parseInt(id) === 1 ? 
+        {/* {parseInt(id) === 1 ? 
         <div className='mt-10'>
             <p className='py-4'>
                 In today’s fast-paced world, achieving a good night’s sleep is more important than ever. Enter the <strong>Infrafoam</strong> mattress, a revolutionary sleep solution that promises unparalleled comfort and support. In this comprehensive guide, we will delve deep into the world of <strong>Infrafoam</strong> mattresses, exploring their unique features, benefits, and why they’re the key to a truly restful night. Join us on this journey to discover how Our mattresses are redefining the way we sleep.
@@ -152,8 +169,11 @@ const BlogPage = () => {
                 In conclusion, we represents a revolution in comfort and support. Its innovative use of advanced foam materials ensures an unparalleled level of quality, making it the perfect choice for a wide range of applications. When seeking foam-based products, be sure to explore options from a reputable foam manufacturer that values excellence and customer satisfaction. Experience the next level of comfort and innovation with Infrafoam Foam – where comfort meets performance!
             </p>
         </div>
-        }
+        } */}
     </section>
+    :
+    <h1>Not Found</h1>
+    }
     </>
   )
 }
