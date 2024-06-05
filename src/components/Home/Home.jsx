@@ -9,7 +9,7 @@ import MyContext from '../../context/data/MyContext'
 
 function Home() {
   const context = useContext(MyContext)
-  const {getAllBlog} = context
+  const {getAllBlog, loading} = context
   
   useTitle("Home")
   return (
@@ -229,7 +229,10 @@ function Home() {
           </div>
       </section>
       <section className='section-container flex justify-center mt-20' id='blog-list'>
+          {getAllBlog.length > 0 && !loading? 
           <BlogList blogs={getAllBlog} />
+        :
+        <><img src="../../../public/images/loading-icon.svg" alt="loading-icon" /></>}
           
       </section>
       <section id='slider' className='max-w-[1440px] mx-auto'>

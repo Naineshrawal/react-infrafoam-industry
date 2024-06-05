@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef, useEffect } from 'react';
 import emailjs   from '@emailjs/browser'
 import { useTitle } from '../../hooks/useTitle';
+import toast from 'react-hot-toast';
 
 
 function Contact() {
@@ -26,10 +27,10 @@ function Contact() {
                 })
               .then(
                 () => {
-                  alert('SUCCESS! message sent succesfuly');
+                  toast.success('SUCCESS.! message sent succesfuly');
                 },
                 (error) => {
-                  alert('FAILED...', error.text);
+                  toast.error('FAILED...', error.text);
                 },
               );
               

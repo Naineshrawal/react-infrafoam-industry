@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import MyContext from './MyContext';
-import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { fireDb } from '../../firebase/FirebaseConfig';
+import toast from 'react-hot-toast';
 
 function MyState(props) {
     const [mode, setMode] = useState("light")
@@ -38,6 +39,16 @@ function MyState(props) {
     getAllBlogs()
   },[setGetAllBlog])
 
+  const deleteBlogs = async (id) => {
+    try {
+        await deleteDoc(doc(fireDb, "blogPost", id));
+        getAllBlogs()
+        toast.success("Blogs deleted successfully")
+    } catch (error) {
+        console.log(error)
+    }
+}
+
     const toggleMode = ()=>{
         if(mode === "light"){
             setMode("dark");
@@ -57,7 +68,8 @@ function MyState(props) {
       setSearchKey, 
       loading, 
       setLoading,
-      getAllBlog
+      getAllBlog,
+      deleteBlogs
       }}>
       {props.children}
     </MyContext.Provider>

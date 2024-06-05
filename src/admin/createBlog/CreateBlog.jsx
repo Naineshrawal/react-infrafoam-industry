@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useTitle } from '../../hooks/useTitle'
 import { Editor } from '@tinymce/tinymce-react';
@@ -15,25 +15,30 @@ function CreateBlog() {
   const navigate = useNavigate();
   const context = useContext(MyContext);
   const { mode, toggleMode } = context;
+  const [thumbnail, setThumbnail] = useState();
+  const [text, settext] = useState('');
 
   const [blogs, setBlogs] = useState({
     title:"",
     category:"",
     content:"",
+    shortDesc:"",
     time:Timestamp.now(),
   });
-  const [thumbnail, setThumbnail] = useState();
-  const [text, settext] = useState('');
-  console.log("Value: ",);
-  console.log("text: ", text);
-  console.log(blogs);
+  
+  useEffect(()=>{
+      if(text.length < 300) setBlogs({...blogs, shortDesc:text})
+        console.log(blogs.shortDesc);
+    
+    
+},[text])
   // Create markup function 
   function createMarkup(c) {
     return { __html: c };
   }
 
   const addPost = async()=>{
-    console.log(thumbnail);
+    
       if(blogs.title === "" || blogs.category === " " || blogs.content === "" || blogs.time === "" ){
         return toast.error("Please Fill All fields")
       }
@@ -67,7 +72,7 @@ function CreateBlog() {
 
                 } catch (error) {
                     toast.error(error)
-                    console.log(error)
+                    
                 }
             });
         });
@@ -76,7 +81,7 @@ function CreateBlog() {
 
   return (
       <div className=' container mx-auto max-w-5xl py-6'>
-        <button onClick={()=>mode = ""}>Dark Mode</button>
+        
           <div className="p-5" style={{
               background: mode === 'dark'
                   ? '#353b48'
@@ -86,17 +91,31 @@ function CreateBlog() {
                   : ' 4px solid rgb(30, 41, 59)'
           }}>
               {/* Top Item  */}
-              <div className="mb-2  ">
-                  <div className="flex gap-2 items-center">
+              
+              <div className="mb-2  flex items-center justify-between">
+                  <div className="">
                       {/* Dashboard Link  */}
                         <Link   to='/dashboard'>
-                          <div className='flex justify-center items-center gap-1 bg-gray-400 hover:bg-slate-600 text-[#434556] hover:text-[white] w-32 rounded-xl py-1'>
-                                <span className='font-bold text-xl '>	&#x2B05;</span>
+                          <div className='flex justify-evenly px-2 items-center gap-1 bg-gray-400 hover:bg-slate-600 text-[#434556] hover:text-[white]  rounded-xl py-1'>
+                                <span className='font-extrabold text-xl mt-[2px]'>&#8629;</span>
                                 <p className=' font-semibold '>Go Back</p>
                           </div>
                         </Link>
                       {/* Text  */}
-                      <h1 className='text-2xl font-bold'
+                      
+                  </div>
+                  
+                  <div className='w-7 cursor-pointer' onClick={toggleMode}>
+                    <img 
+                    src={mode === "light" ?
+                          "../../../public/images/dark-mode-icon.png"
+                        :
+                        "../../../public/images/light-mode-icon.png"
+                    } 
+                    alt="theme-mode" />
+                  </div>
+              </div>
+              <h1 className='text-3xl font-bold text-center'
                           
                           style={{
                               color: mode === 'dark'
@@ -104,11 +123,9 @@ function CreateBlog() {
                                   : 'black'
                           }}
                       >Create Blog
-                      </h1>
-                  </div>
-              </div>
+               </h1>
               {/* main Content  */}
-              <div className="mb-3">
+              <div className="mb-3 mt-5">
                   {/* Thumbnail  */}
                   {thumbnail && <img className=" w-full rounded-md mb-3 "
                       src={thumbnail
@@ -193,7 +210,7 @@ function CreateBlog() {
                   }}
               />
               {/* Five Submit Button  */}
-              <button className=" w-full mt-5"
+              <button className=" w-full mt-5 px-1 py-2 rounded-lg text-lg font-bold "
                   style={{
                       background: mode === 'dark'
                           ? 'rgb(226, 232, 240)'
@@ -207,10 +224,10 @@ function CreateBlog() {
               >Add Post
               </button>
               {/* Six Preview Section  */}
-              <div className="">
+              <div className="mt-10">
                   <h1 className=" text-center mb-3 text-2xl">Preview</h1>
-                  <div className="content">
-                  <div
+                <div className="section-container">
+                    <div
                       className={`[&>h1]:text-[32px] [&>h1]:font-bold  [&>h1]:mb-2.5 
                       ${mode === 'dark' ? '[&>h1]:text-[#ff4d4d]' : '[&>h1]:text-black'}
 
@@ -244,8 +261,8 @@ function CreateBlog() {
                       [&>img]:rounded-lg
                       `}
                        dangerouslySetInnerHTML={createMarkup(blogs.content)}>
-                  </div>
-          </div>
+                    </div>
+                </div>
       </div >
           </div >
       </div >

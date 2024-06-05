@@ -12,7 +12,7 @@ function Dashboard() {
     navigate("/")
   }
   const context = useContext(MyContext)
-  const {getAllBlog} = context
+  const {getAllBlog, deleteBlogs} = context
 
   // console.log(getAllBlog);
 
@@ -24,8 +24,8 @@ function Dashboard() {
             <div className='w-[120px] h-[120px] bg-[#afd3ff] rounded-[50%]  mx-auto  overflow-hidden border-[6px] border-[#4e4e4e]'><img className='relative w-[120px] h-[120px] -bottom-2'  src="../../../public/images/profile-icon.png" alt="profile-icon" /></div>
         </div>
         <div>
-          <h1 className='text-xl font-semibold'>Nainesh Raval</h1>
-          <h2 className='text-lg font-medium'>Owner</h2>
+          <h1 className='text-xl font-semibold'>Brijesh Kapadia</h1>
+          <h2 className='text-lg font-medium'>Admin</h2>
           <h2 className='text-lg font-medium'><span>Total Blogs :</span> 2</h2>
           <div className='flex gap-2 mt-4'>
               <Link to={'/createblog'}><button className='px-4 py-2 bg-black text-[white] rounded-lg'>Create Blog</button></Link>
@@ -69,10 +69,11 @@ function Dashboard() {
                                 </thead>
                                 {/* tbody  */}
                                 
-                                {getAllBlog? 
-                                <>{getAllBlog.map((item, index)=>{
+                                {getAllBlog.length > 0? 
+                                <>
+                                {getAllBlog.map((item, index)=>{
                                   
-                                  const {thumbnail, date} = item
+                                  const {thumbnail, date, id} = item
                                   return(
                                     
                                       <tbody key={index}>
@@ -101,7 +102,8 @@ function Dashboard() {
                                               </td>
                                               {/* Delete Blog  */}
                                               <td  className="px-6 py-4">
-                                                  <button className=' px-4 py-1 rounded-lg text-[white] font-bold bg-red-500'>
+                                                  <button className=' px-4 py-1 rounded-lg text-[white] font-bold bg-red-500'
+                                                  onClick={()=>deleteBlogs(id)}>
                                                     Delete
                                                   </button>
                                               </td>
@@ -111,7 +113,7 @@ function Dashboard() {
                                   )
                                 })}</>
                                 :
-                                <h1>Not Found</h1>}
+                                <tbody className='text-base font-medium text-base-red p-1'><tr><td>Not Blogs yet,  Please Create New Blog...</td></tr></tbody>}
                             </table>
                         </div>
       </div>
