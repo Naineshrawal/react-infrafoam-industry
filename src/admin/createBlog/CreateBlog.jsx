@@ -108,9 +108,9 @@ function CreateBlog() {
                   <div className='w-7 cursor-pointer' onClick={toggleMode}>
                     <img 
                     src={mode === "light" ?
-                          "../../../public/images/dark-mode-icon.png"
+                          "images/dark-mode-icon.png"
                         :
-                        "../../../public/images/light-mode-icon.png"
+                        "images/light-mode-icon.png"
                     } 
                     alt="theme-mode" />
                   </div>

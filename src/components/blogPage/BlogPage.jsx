@@ -107,7 +107,7 @@ const BlogPage = () => {
                     <div className='flex items-center gap-3 text-[#929292] '>
                         <p className='font-RobotoCondensed capitalize font-medium '>{blog.blogs.category}</p>
                         <div className='flex gap-1'>
-                            <img width='14px'  src="../../../public/images/time-gray.svg" alt="hours" />
+                            <img width='14px'  src="images/time-gray.svg" alt="hours" />
                             <span className='text-sm'>{blog.date}</span>
                         </div>
                     </div>
@@ -153,7 +153,7 @@ const BlogPage = () => {
                 
             </div>
             :
-            <div className='flex justify-center'><img src="../../../public/images/loading-icon.svg" alt="loading-icon" /></div>
+            <div className='flex justify-center'><img src="images/loading-icon.svg" alt="loading-icon" /></div>
         }
         <Comments
          addComment={addComment}

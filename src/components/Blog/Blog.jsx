@@ -16,7 +16,7 @@ function Blog() {
         {getAllBlog.length > 0 && !loading ? 
           <BlogList blogs={getAllBlog} />
         :
-        <><img src="../../../public/images/loading-icon.svg" alt="loading-icon" /></>}
+        <><img src="images/loading-icon.svg" alt="loading-icon" /></>}
     </section>
   )
 }

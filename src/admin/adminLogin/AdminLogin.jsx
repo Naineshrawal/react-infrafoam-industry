@@ -36,7 +36,7 @@ function AdminLogin() {
         <div className=' mx-auto max-w-sm bg-[rgb(41,41,41)] py-10 px-5 rounded-lg'>
             <div className=' '>
                   
-                  <div className='w-[90px] h-[90px] bg-white rounded-[50%]  mx-auto  overflow-hidden border-[6px] border-[#4e4e4e]'><img className='relative -bottom-2'  src="../../../public/images/adminlogin-icon.png" alt="adminlogin-icon" /></div>
+                  <div className='w-[90px] h-[90px] bg-white rounded-[50%]  mx-auto  overflow-hidden border-[6px] border-[#4e4e4e]'><img className='relative -bottom-2'  src="images/adminlogin-icon.png" alt="adminlogin-icon" /></div>
                 
                   <h1 className='text-3xl text-center text-[white] font-semibold'>Admin Login</h1>
             </div>      

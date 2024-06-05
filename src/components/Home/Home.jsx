@@ -14,7 +14,7 @@ function Home() {
   useTitle("Home")
   return (
     <>
-      <section id="hero" className='section-container bg-[url("../../../public/images/hero-mattress5-bg.jpg")] mt-4 sm:bg-contain  bg-bottom sm:bg-center bg-no-repeat  w-full min-h-[90vh]'>
+      <section id="hero" className='section-container bg-[url("images/hero-mattress5-bg.jpg")] mt-4 sm:bg-contain  bg-bottom sm:bg-center bg-no-repeat  w-full min-h-[90vh]'>
         <div className='pt-24 px-10 sm:pt-20  sm:px-20 max-w-xl md:max-w-2xl lg:max-w-4xl'>
           <h2 className='text-4xl md:text-[40px] lg:text-5xl font-bold font-Aclonica text-[#004CA3] mb-5  '>We are The</h2>
           <h1 className='font-Saira font-bold text-4xl media400:text-5xl md:text-6xl lg:text-7xl text-base-red'>Foam & Mattress Manufacturer</h1>
@@ -34,11 +34,11 @@ function Home() {
         </div>
       </section>
       <section id='company-info' className='section-container flex my-20 relative md:flex-row flex-col items-center justify-between'>
-        <img className='absolute md:right-0 top-96  md:-top-32' src="../../../public/images/bg-map.png" alt="world-map" />
+        <img className='absolute md:right-0 top-96  md:-top-32' src="images/bg-map.png" alt="world-map" />
         <div className='md:max-w-[40%] md:ml-10 '>
             <div className='relative md:m-0 mx-10 sm:mx-24  '>
-                <img className=' rounded-3xl border-[#4a1616]  border-[12px] ' src="../../../public/images/foam_8.png" alt="foam-8" />
-                <img className='lg:max-w-60   max-w-52 absolute -bottom-10 right-[50%] translate-x-[50%]  sm:-right-20 sm:translate-x-0  rounded-3xl border-red-600  border-2 ' src="../../../public/images/Infra_Card.jpeg" alt="visiting-card" />
+                <img className=' rounded-3xl border-[#4a1616]  border-[12px] ' src="images/foam_8.png" alt="foam-8" />
+                <img className='lg:max-w-60   max-w-52 absolute -bottom-10 right-[50%] translate-x-[50%]  sm:-right-20 sm:translate-x-0  rounded-3xl border-red-600  border-2 ' src="images/Infra_Card.jpeg" alt="visiting-card" />
             </div>
         </div>
         <div className='md:max-w-[60%] px-5 md:px-10 mt-28 md:mt-0 lg:md:pl-20'>
@@ -48,9 +48,9 @@ function Home() {
             <p className='mt-2 text-sm text-[#000B92] font-extrabold '>An ISO 9001:2015 Certified Company</p>
           </div>
           <ul>
-            <li className='flex items-center gap-2'><img width='14px' src="../../../public/images/correct.svg" alt="correct-icon" />Premium Quality</li>
-            <li className='flex items-center gap-2'><img width='14px' src="../../../public/images/correct.svg" alt="correct-icon" />Upto 10 years of warranty</li>
-            <li className='flex items-center gap-2'><img width='14px' src="../../../public/images/correct.svg" alt="correct-icon" />Commitment of Comfortable slee</li>
+            <li className='flex items-center gap-2'><img width='14px' src="images/correct.svg" alt="correct-icon" />Premium Quality</li>
+            <li className='flex items-center gap-2'><img width='14px' src="images/correct.svg" alt="correct-icon" />Upto 10 years of warranty</li>
+            <li className='flex items-center gap-2'><img width='14px' src="images/correct.svg" alt="correct-icon" />Commitment of Comfortable slee</li>
             
             
           </ul>
@@ -65,7 +65,7 @@ function Home() {
         </p>
         <div className='my-16 flex media700:flex-row flex-col mx-auto'>
           <div className='w-full  media700:pr-5'>
-              <div className='m-10 '><img className='rounded-xl px-5 bg-[#2c2c2c] border-y-2 border-black' src="../../../public/images/foam-2.png" alt="foam-2" /></div>
+              <div className='m-10 '><img className='rounded-xl px-5 bg-[#2c2c2c] border-y-2 border-black' src="images/foam-2.png" alt="foam-2" /></div>
               <div>
                 <h2>PU FOAM</h2>
                 <div className='bg-gray-400 overflow-hidden'>
@@ -86,26 +86,26 @@ function Home() {
                   </div>
               </div>
             </div>
-            <div className='m-10 order-1 media700:order-2'><img className='rounded-xl px-5 bg-[#2c2c2c] border-y-2 border-black'src="../../../public/images/foam-2_2.jpeg" alt="foam-2_2" /></div>
+            <div className='m-10 order-1 media700:order-2'><img className='rounded-xl px-5 bg-[#2c2c2c] border-y-2 border-black'src="images/foam-2_2.jpeg" alt="foam-2_2" /></div>
           </div>
           
         </div>
       </section>
-      <section id="product-sales" className='my-20 bg-[url("../../../public/images/sales-bg.jpeg")] bg-cover bg-no-repeat bg-center bg-fixed'>
+      <section id="product-sales" className='my-20 bg-[url("images/sales-bg.jpeg")] bg-cover bg-no-repeat bg-center bg-fixed'>
         <div className=' bg-black/35'>
               <div className='section-container flex sm:flex-row flex-col sm:space-y-0 space-y-10 py-14 sm:py-28  justify-around items-center'>
                 <div id="experience" className='flex flex-col  justify-center items-center'>
-                  <img src="../../../public/images/calendar-icon.png" alt="calendar-icon" />
+                  <img src="images/calendar-icon.png" alt="calendar-icon" />
                   <h1 className='text-5xl mt-2 text-[white] font-bold'>9 +</h1>
                   <p className='text-xl text-[black] font-semibold'>Years of Experience</p>
                 </div>
                 <div id="deleveries" className='flex flex-col  justify-center items-center'>
-                  <img src="../../../public/images/delivery-icon.png" alt="delivery-icon" />
+                  <img src="images/delivery-icon.png" alt="delivery-icon" />
                   <h1 className='text-5xl mt-2 text-[white] font-bold'>14999 +</h1>
                   <p className='text-xl text-[black] font-semibold'>Deliveries Completed</p>
                 </div>
                 <div id="clients" className='flex flex-col  justify-center items-center'>
-                  <img src="../../../public/images/happy-client.png" alt="happy-client" />
+                  <img src="images/happy-client.png" alt="happy-client" />
                   <h1 className='text-5xl mt-2 text-[white] font-bold'>400 +</h1>
                   <p className='text-xl text-[black] font-semibold'>Happy Clients</p>
                 </div>
@@ -121,25 +121,25 @@ function Home() {
           </div>
           <div className='section-container '>
               <div className='flex items-center justify-center space-x-2 pb-3 mt-5 mx-20 border-b-2 border-[#a5a5a5] '>
-                <img width='48px' src="../../../public/images/mattress-icon.png" alt="mattress-icon" />
+                <img width='48px' src="images/mattress-icon.png" alt="mattress-icon" />
                 <h1 className='sm:text-3xl text-2xl font-bold '>Mattresses</h1>
               </div>
           </div>
           
-          <div id="mattresses" className='w-full my-10 bg-[url("../../../public/images/mattress_bg.jpg")] bg-cover bg-no-repeat bg-center bg-fixed '>
+          <div id="mattresses" className='w-full my-10 bg-[url("images/mattress_bg.jpg")] bg-cover bg-no-repeat bg-center bg-fixed '>
             <div className='bg-black/35'>
                 <div className='section-container flex md:flex-row flex-col md:space-y-0 space-y-10 py-10 px-10 sm:px-40 md:px-14   justify-around md:items-stretch items-center'>
                   <div id="deluxe" className=' w-full  p-8 mx-4 bg-white flex flex-wrap '>
-                    <img className=''  src="../../../public/images/mattress-3.jpg" alt="mattress-3" />
+                    <img className=''  src="images/mattress-3.jpg" alt="mattress-3" />
                     <h1 className='text-center text-2xl mt-2 font-bold text-[#022144]'>Deluxe Premium Mattress</h1>
                   </div>
                   <div id="silver" className='w-full  p-8 mx-4 bg-white flex flex-col'>
-                    <img className=''  src="../../../public/images/mattress-1.jpg" alt="mattress-1" />
+                    <img className=''  src="images/mattress-1.jpg" alt="mattress-1" />
                     <h1 className='text-center text-2xl mt-2  font-bold text-[#022144]'>Silver Premium Mattress</h1>
                   </div>
                   <div id="diamond" className='w-full  p-8 mx-4 bg-white flex flex-col '>
                     
-                    <img className='' src="../../../public/images/mattress-4.jpg" alt="mattress-4" />
+                    <img className='' src="images/mattress-4.jpg" alt="mattress-4" />
                     <h1 className='text-center text-2xl mt-2 text-[#022144] font-bold'>Diamond Ortho Mattress</h1>
                   </div>
                 </div>
@@ -147,12 +147,12 @@ function Home() {
           </div>
           <div id='foam' className='section-container mb-10'>
             <div className='flex items-center justify-center space-x-2 pb-3 mx-10 sm:mx-20 border-b-2 border-[#a5a5a5]  my-10'>
-                <img width='48px' src="../../../public/images/foam-icon.png" alt="mattress-icon" /><h1 className='sm:text-3xl text-2xl font-bold'>Foam</h1>
+                <img width='48px' src="images/foam-icon.png" alt="mattress-icon" /><h1 className='sm:text-3xl text-2xl font-bold'>Foam</h1>
             </div>
             <div className='sm:space-y-0 space-y-10'>
               <div className='flex sm:flex-row flex-col items-center '>
                 <div className=' w-full px-20 lg:px-32 '>
-                  <img className='hover:scale-110' src="../../../public/images/foam-7.png" alt="foam-7" />
+                  <img className='hover:scale-110' src="images/foam-7.png" alt="foam-7" />
                 </div>
                 <div className='w-full md:px-5 lg:px-20 sm:mt-0 mt-10'>
                   <h1 className='text-2xl font-bold mb-8 sm:text-start text-center'>SOFT FOAM</h1>
@@ -161,7 +161,7 @@ function Home() {
               </div>
               <div className='flex sm:flex-row flex-col items-center '>
                 <div className=' w-full px-20 lg:px-32 sm:order-2'>
-                  <img className='hover:scale-110' src="../../../public/images/foam-5_5.png" alt="foam-5_5" />
+                  <img className='hover:scale-110' src="images/foam-5_5.png" alt="foam-5_5" />
                 </div>
                 <div className='w-full md:px-5 lg:px-20 sm:mt-0 mt-10'>
                   <h1 className='text-2xl font-bold mb-8 sm:text-start text-center'>HR FOAM</h1>
@@ -170,7 +170,7 @@ function Home() {
               </div>
               <div className='flex sm:flex-row flex-col items-center '>
                 <div className=' w-full px-20 lg:px-32 '>
-                  <img className='hover:scale-110' src="../../../public/images/foam-1.png" alt="foam-1" />
+                  <img className='hover:scale-110' src="images/foam-1.png" alt="foam-1" />
                 </div>
                 <div className='w-full md:px-5 lg:px-20 sm:mt-0 mt-10'>
                   <h1 className='text-2xl font-bold mb-8 sm:text-start text-center'>PREMIUM FOAM</h1>
@@ -180,7 +180,7 @@ function Home() {
             </div>
           </div>
       </section>
-      <section id='trust' className='mt-16 bg-[#181531] bg-[url("../../../public/images/trust-bg.png")] bg-cover bg-no-repeat bg-center'>
+      <section id='trust' className='mt-16 bg-[#181531] bg-[url("images/trust-bg.png")] bg-cover bg-no-repeat bg-center'>
           <div className='section-container py-16'>
             <div className='px-0 sm:px-14 md:px-28'>
                 <h1 className='relative text-center text-3xl sm:text-5xl pb-2 mb-10 text-[#fff] before:content-[""] before:w-[100px] before:h-[2px] before:inline-block before:bg-[#fec110] before:absolute before:left-[50%] before:translate-x-[-50%] before:bottom-0 after:content-[""] after:w-[60px] after:h-[2px] after:inline-block after:bg-[#fec110] after:absolute after:left-[50%] after:translate-x-[-50%] after:-bottom-1 uppercase font-bold'>WHY WE'RE GREAT CHOICE FOR YOU</h1>
@@ -192,7 +192,7 @@ function Home() {
               <div className='flex flex-col sm:flex-row gap-4'>
                 <div className='max-w-[255px] bg-[#3F4964] py-10 px-4'>
                     <div className='w-full flex justify-between mb-10 pr-10'>
-                      <img className='w-16 h-16' src="../../../public/images/warranty-icon.png" alt="warranty-icon" />
+                      <img className='w-16 h-16' src="images/warranty-icon.png" alt="warranty-icon" />
                       <h1 className='text-[#8493C8] text-5xl font-bold'>1.0</h1>
                     </div>
                     <h2 className='text-xl font-bold mb-4'>10 Years Warranty</h2>
@@ -200,7 +200,7 @@ function Home() {
                 </div>
                 <div className='max-w-[255px] bg-[#3F4964] py-10 px-4'>
                     <div className='w-full flex justify-between mb-10 pr-10'>
-                      <img className='w-16 h-16' src="../../../public/images/value-4-money-icon.png" alt="value-4-money-icon" />
+                      <img className='w-16 h-16' src="images/value-4-money-icon.png" alt="value-4-money-icon" />
                       <h1 className='text-[#8493C8] text-5xl font-bold'>2.0</h1>
                     </div>
                     <h2 className='text-xl font-bold mb-4'>Value for Money</h2>
@@ -210,7 +210,7 @@ function Home() {
               <div className='flex flex-col sm:flex-row gap-4'>
                 <div className='max-w-[255px] bg-[#3F4964] py-10 px-4'>
                     <div className='w-full flex justify-between mb-10 pr-10'>
-                      <img className='w-16 h-16' src="../../../public/images/skilled.png" alt="skilled" />
+                      <img className='w-16 h-16' src="images/skilled.png" alt="skilled" />
                       <h1 className='text-[#8493C8] text-5xl font-bold'>3.0</h1>
                     </div>
                     <h2 className='text-xl font-bold mb-4'>Skilled Craftsmanship</h2>
@@ -218,7 +218,7 @@ function Home() {
                 </div>
                 <div className='max-w-[255px] bg-[#3F4964] py-10 px-4'>
                     <div className='w-full flex justify-between mb-10 pr-10'>
-                      <img className='w-16 h-16' src="../../../public/images/trust-icon.png" alt="trust-icon" />
+                      <img className='w-16 h-16' src="images/trust-icon.png" alt="trust-icon" />
                       <h1 className='text-[#8493C8] text-5xl font-bold'>4.0</h1>
                     </div>
                     <h2 className='text-xl font-bold mb-4'>Trusted Reputation</h2>
@@ -232,7 +232,7 @@ function Home() {
           {getAllBlog.length > 0 && !loading? 
           <BlogList blogs={getAllBlog} />
         :
-        <><img src="../../../public/images/loading-icon.svg" alt="loading-icon" /></>}
+        <><img src="images/loading-icon.svg" alt="loading-icon" /></>}
           
       </section>
       <section id='slider' className='max-w-[1440px] mx-auto'>

@@ -26,7 +26,7 @@ function Scrolltotop() {
 
   return (
     <div className='duration-1000' onClick={scrollTop}>
-      {isVisible && <div className='fixed bottom-4 right-2 bg-[#f43336a1] px-1 py-2 rounded-lg cursor-pointer'><img width={"30px"} src="../../../public/images/scroll-up.svg" alt="scroll-up" /></div>}
+      {isVisible && <div className='fixed bottom-4 right-2 bg-[#f43336a1] px-1 py-2 rounded-lg cursor-pointer'><img width={"30px"} src="images/scroll-up.svg" alt="scroll-up" /></div>}
     </div>
   )
 }
