@@ -91,7 +91,7 @@ function Comments({
             
             return(
                 <div key={index}>
-                    <article   className="p-6 mb-6 text-base rounded-lg " style={{ background: mode === 'dark' ? '#353b48' : 'rgb(226, 232, 240)' }}>
+                    <article key={Math.random()*index}  className="p-6 mb-6 text-base rounded-lg " style={{ background: mode === 'dark' ? '#353b48' : 'rgb(226, 232, 240)' }}>
                    
                         <footer className="flex justify-between items-center mb-">
                             <div className="flex items-center my-2 bg-white px-2 py-1 rounded-lg ">

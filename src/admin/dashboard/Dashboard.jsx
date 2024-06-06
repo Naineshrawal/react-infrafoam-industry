@@ -21,7 +21,7 @@ function Dashboard() {
 
       <div className='flex justify-center sm:flex-row flex-col sm:text-start text-center items-center gap-10 px-4 py-6 sm:py-10'>
         <div>
-            <div className='w-[120px] h-[120px] bg-[#afd3ff] rounded-[50%]  mx-auto  overflow-hidden border-[6px] border-[#4e4e4e]'><img className='relative w-[120px] h-[120px] -bottom-2'  src="images/profile-icon.png" alt="profile-icon" /></div>
+            <div className='w-[120px] h-[120px] bg-[#afd3ff] rounded-[50%]  mx-auto  overflow-hidden border-[6px] border-[#4e4e4e]'><img className='relative w-[120px] h-[120px] -bottom-2'  src="/images/profile-icon.png" alt="profile-icon" /></div>
         </div>
         <div>
           <h1 className='text-xl font-semibold'>Brijesh Kapadia</h1>

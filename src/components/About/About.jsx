@@ -12,7 +12,7 @@ function About() {
             <h1 className='text-4xl md:text-5xl lg:text-6xl  font-semibold text-[#333333] mb-6'>About Us</h1>
             <p className='max-w-[245px] text-sm lg:text-base text-[#929292]'>We are The Leading Manufacturer of PU Foam & Mattresses Since  9<sup>+</sup> Years</p>
           </div>
-          <div className='sm:w-full p-6'><img className='border-4  border-black rounded-2xl' src="images/about-us-img.jpg" alt="about-us" /></div>
+          <div className='sm:w-full p-6'><img className='border-4  border-black rounded-2xl' src="/images/about-us-img.jpg" alt="about-us" /></div>
         </div>
       </section>
       <section className='section-container my-10'>
@@ -22,12 +22,12 @@ function About() {
               <p className=' md:text-lg lg:text-xl text-[#324a6d] '>We Manufacture Premium Quality Foam & Mattress with Our Skilled Craftsmanship</p>
             </div>
             <div className='w-full flex flex-col sm:items-start items-center justify-end sm:text-start text-center'>
-              <img className='w-80 hover:scale-110 duration-200 mb-10' src="images/mattress-6.jpg" alt="mattress-6" />
+              <img className='w-80 hover:scale-110 duration-200 mb-10' src="/images/mattress-6.jpg" alt="mattress-6" />
               <h2 className='text-xl  md:text-2xl  font-medium  text-[#333333]'><u>Premium Mattress</u></h2>
               <p className='text-[#929292] text-sm'>Premium Quality Mattresses With Up to 10 Years of Warranty</p>
             </div>
             <div className='w-full flex flex-col sm:items-start items-center justify-end  sm:text-start text-center '>
-              <img className='w-52 hover:scale-110 duration-200 mb-10' src="images/footer-foam.png" alt="footer-foam" />
+              <img className='w-52 hover:scale-110 duration-200 mb-10' src="/images/footer-foam.png" alt="footer-foam" />
               <h2 className='text-xl  md:text-2xl  font-medium  text-[#333333]'><u>Premium Foam</u></h2>
               <p className='text-[#929292] text-sm'>Premium Quality Foam With Up to 10 Years of Warranty</p>
             </div>
@@ -39,14 +39,14 @@ function About() {
               <div className='flex flex-col sm:flex-row gap-4'>
                 <div className='max-w-[255px] bg-[#3F4964] flex flex-col items-center justify-center px-8 text-center  py-8'>
                     <div className=' flex justify-center mb-10 '>
-                      <img className='w-16 h-16' src="images/warranty-icon.png" alt="warranty-icon" />
+                      <img className='w-16 h-16' src="/images/warranty-icon.png" alt="warranty-icon" />
                     </div>
                     <h2 className='text-xl font-bold mb-4 '>Durability Guaranteed</h2>
                     <p className='text-sm lg:text-base text-[#d8d8d8] '>Our products Comes with Up to 10 Years of Warranty, ensuring your investment provides long-lasting comfort and support.</p>
                 </div>
                 <div className='max-w-[255px] bg-[#3F4964] flex flex-col items-center justify-center px-8 text-center py-8'>
                     <div className='flex justify-center  mb-10 '>
-                      <img className='w-16 h-16' src="images/value-4-money-icon.png" alt="value-4-money-icon" />
+                      <img className='w-16 h-16' src="/images/value-4-money-icon.png" alt="value-4-money-icon" />
                     </div>
                     <h2 className='text-xl font-bold mb-4'>Value for Money</h2>
                     <p className='text-sm lg:text-base text-[#d8d8d8] '>Experience luxury without breaking the bank - our offerings provide exceptional value at affordable prices.</p>
@@ -55,14 +55,14 @@ function About() {
               <div className='flex flex-col sm:flex-row gap-4'>
                 <div className='max-w-[255px] bg-[#3F4964] flex flex-col items-center justify-center px-8 text-center py-8'>
                     <div className='flex justify-center  mb-10 '>
-                      <img className='w-16 h-16' src="images/skilled.png" alt="skilled" />
+                      <img className='w-16 h-16' src="/images/skilled.png" alt="skilled" />
                     </div>
                     <h2 className='text-xl font-bold mb-4'>Skilled Craftsmanship</h2>
                     <p className='text-sm lg:text-base text-[#d8d8d8] '>Carefully Craftedwith expert skill to ensure an outstanding sleep journey.</p>
                 </div>
                 <div className='max-w-[255px] bg-[#3F4964] flex flex-col items-center justify-center px-8 text-center py-8'>
                     <div className='flex justify-center  mb-10 '>
-                      <img className='w-16 h-16' src="images/trust-icon.png" alt="trust-icon" />
+                      <img className='w-16 h-16' src="/images/trust-icon.png" alt="trust-icon" />
                     </div>
                     <h2 className='text-xl font-bold mb-4'>Trusted Reputation</h2>
                     <p className='text-sm lg:text-base text-[#d8d8d8] '>Customer trust forged through consistent excellence in foam and mattresses</p>
@@ -70,7 +70,7 @@ function About() {
               </div>
             </div>
       </section>
-      <section id="hero" className='section-container bg-[url("images/hero-mattress5-bg.jpg")] mt-20 sm:bg-contain  bg-bottom sm:bg-center bg-no-repeat  w-full min-h-[90vh]'>
+      <section id="hero" className='section-container bg-about-bg mt-20 sm:bg-contain  bg-bottom sm:bg-center bg-no-repeat  w-full min-h-[90vh]'>
         <div className='pt-24 px-10 sm:pt-20  sm:px-20 max-w-xl md:max-w-2xl lg:max-w-3xl'>
           <h1 className='font-Saira font-medium text-4xl media400:text-5xl md:text-6xl lg:text-7xl text-base-red mb-20'>For Premium Quality Mattress</h1>
           <p className='text-[#895a5a] text-xs md:text-sm mb-2'>

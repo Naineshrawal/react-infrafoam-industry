@@ -12,13 +12,13 @@ function Header() {
     <header id='header' className='section-container flex relative sm:sticky items-center justify-between px-4 py-2  shadow-md text-[#929292] '>
       <div id='logo' className='w-full sm:w-[20%]'>
         <Link to={'/'}>
-              <img className='w-40' src= "images/logo.png" alt="logo" />
+              <img className='w-40' src= "/images/logo.png" alt="logo" />
         </Link>
       </div>
 
       <div className={` text-xl sm:text-base text-center z-10  top-0 left-0 h-[100vh] sm:h-16 w-full fixed sm:static ${hidden} sm:flex sm:flex-row flex-col   sm:bg-transparent bg-white   sm:justify-end items-center`} >
-        <img width="30px" onClick={()=>setHidden("hidden")} className='sm:hidden  cursor-pointer absolute top-8 right-4' src='images/xmark-solid.svg' />
-        <img width="100px" className='sm:hidden mx-auto mt-40 mb-8' src='images/logo.png' alt='logo'/>
+        <img width="30px" onClick={()=>setHidden("hidden")} className='sm:hidden  cursor-pointer absolute top-8 right-4' src='/images/xmark-solid.svg' />
+        <img width="100px" className='sm:hidden mx-auto mt-40 mb-8' src='/images/logo.png' alt='logo'/>
           <ul onClick={()=>setHidden('hidden')} className='flex sm:flex-row flex-col items-center   space-y-5 sm:space-y-0 space-x-0 sm:space-x-2 md:space-x-5'>
             <li>
               <NavLink className={({isActive})=> `${isActive ? 'text-[#f43336]': null} hover:text-[#f43336] font-medium  duration-300`
@@ -54,7 +54,7 @@ function Header() {
             </li>
             <li>
                 {true? <NavLink to='/dashboard'>
-                      <img className='w-4 mx-auto' src='images/dashboard.svg' alt='dashboard-icon' onClick={()=>setHidden('hidden')}/>
+                      <img className='w-4 mx-auto' src='/images/dashboard.svg' alt='dashboard-icon' onClick={()=>setHidden('hidden')}/>
                         
                       
                 </NavLink>:"" }
@@ -70,7 +70,7 @@ function Header() {
           
       </div>
 
-      <img width="30px" onClick={()=>setHidden(null)} className='sm:hidden  cursor-pointer' src='images/bars-solid.svg' />
+      <img width="30px" onClick={()=>setHidden(null)} className='sm:hidden  cursor-pointer' src='/images/bars-solid.svg' />
     </header>
       )
 }

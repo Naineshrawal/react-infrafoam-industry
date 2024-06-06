@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef} from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -49,28 +49,28 @@ function Slider() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="images/mattress-4.jpg" alt='mattress-4' />
+          <img src="/images/mattress-4.jpg" alt='mattress-4' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="images/Soft-Foam.jpg" alt='Soft-foam'/>
+          <img src="/images/Soft-Foam.jpg" alt='Soft-foam'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="images/Foam-1_2.jpg" alt='foam-1_2'/>
+          <img src="/images/Foam-1_2.jpg" alt='foam-1_2'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="images/mattress-3.jpg" alt='mattress-3'/>
+          <img src="/images/mattress-3.jpg" alt='mattress-3'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="images/foam-4.png" alt='foam-4'/>
+          <img src="/images/foam-4.png" alt='foam-4'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="images/foam-5_5.png" alt='foam-5'/>
+          <img src="/images/foam-5_5.png" alt='foam-5'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="images/foam-6.jpg" alt='foam-6'/>
+          <img src="/images/foam-6.jpg" alt='foam-6'/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="images/foam-7.png" alt='foam-7'/>
+          <img src="/images/foam-7.png" alt='foam-7'/>
         </SwiperSlide>
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

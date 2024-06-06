@@ -12,6 +12,13 @@ export default {
       },
       dropShadow:{
         'footer-shadow' : '-5px 30px 10px rgba(106, 106, 106, 0.44) '
+      },
+      backgroundImage: {
+        'hero-bg': "url('/images/hero-mattress5-bg.jpg')",
+        'sales-bg': "url('/images/sales-bg.jpeg')",
+        'our-product-bg': "url('/images/mattress_bg.jpg')",
+        'trust-bg': "url('/images/trust-bg.png')",
+        'about-bg': "url('/images/hero-mattress5-bg.jpg')",
       }
     },
     fontFamily:{

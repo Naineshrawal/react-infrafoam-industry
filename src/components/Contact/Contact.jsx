@@ -46,10 +46,10 @@ function Contact() {
       <section className="section-container my-20  flex space-y-20 md:space-y-0 md:flex-row flex-col">
         
           <div className='w-full pl-0 md:pl-10 md:text-start text-center' >
-            <img width='200px' className='mx-auto mb-8' src="images/logo.png" alt="logo" />
+            <img width='200px' className='mx-auto mb-8' src="/images/logo.png" alt="logo" />
             <h1 className='text-4xl md:text-5xl lg:text-6xl  font-semibold text-[#333333] '>Contact Us</h1>
             <div className='flex items-center justify-center md:justify-normal gap-2 mt-10 '>
-              <img src="images/call-icon.svg" alt="call-icon" />
+              <img src="/images/call-icon.svg" alt="call-icon" />
               <p>9933237915</p>
             </div>
             <p className='max-w-[245px] mx-auto md:mx-0 text-sm lg:text-base text-[#929292] '>We would love to hear from you.
@@ -81,19 +81,19 @@ function Contact() {
         <div className='w-full flex flex-col  justify-center gap-4 order-1'>
             <h1 className='text-4xl md:text-5xl lg:text-6xl  font-semibold text-[#333333] mb-16 md:text-start text-center'>Visit Us</h1>
             <div>
-              <div className='flex items-center gap-2'><img width='16px' src="images/location-dark.svg" alt="location-dark" /><strong>Address :</strong></div>
+              <div className='flex items-center gap-2'><img width='16px' src="/images/location-dark.svg" alt="location-dark" /><strong>Address :</strong></div>
               <p className='max-w-[300px]'>Ho.551, Pl. 1., Opp. Shubh Residency, Vav Jokha Road, Kamrej, Surat (394185) Gujarat.</p>
             </div>
             <div>
-              <div className='flex items-center gap-2'><img width='16px' src="images/time-dark.svg" alt="time-dark" /><strong>Hours :</strong></div>
+              <div className='flex items-center gap-2'><img width='16px' src="/images/time-dark.svg" alt="time-dark" /><strong>Hours :</strong></div>
               <p>Mon-Sat 9:00AM - 5:00PM</p>
             </div>
             <div>
-              <div className='flex items-center gap-2'><img width='16px' src="images/call-icon.svg" alt="call" /><strong>Phone :</strong></div>
+              <div className='flex items-center gap-2'><img width='16px' src="/images/call-icon.svg" alt="call" /><strong>Phone :</strong></div>
               <p>+91 99332 37915</p>
             </div>
             <div>
-              <div className='flex items-center gap-2'><img width='16px' src="images/email-dark.svg" alt="email" /><strong>Email :</strong></div>
+              <div className='flex items-center gap-2'><img width='16px' src="/images/email-dark.svg" alt="email" /><strong>Email :</strong></div>
               <p>info@infrafoam.in</p>
             </div>
         </div>

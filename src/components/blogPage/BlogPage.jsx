@@ -1,11 +1,10 @@
-import React, { useEffect, useState,  } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useTitle } from '../../hooks/useTitle';
 import MyContext from '../../context/data/MyContext';
 import Comments from '../comments/Comments';
-import { Timestamp, addDoc, collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, doc, getDoc, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { fireDb } from '../../firebase/FirebaseConfig';
 import toast from 'react-hot-toast';
 
@@ -16,21 +15,41 @@ const BlogPage = () => {
     useTitle("Blog")
 
     const context = useContext(MyContext)
-    const {getAllBlog, mode, loading} = context
-    
+    const { mode, loading, setLoading} = context
+    const [getBlog, setGetBlog] = useState([])
     
     const [fullName, setFullName] = useState("")
     const [commentText, setCommentText] = useState("")
     const [allComment, setAllComment] = useState([])
-    
+    console.log(getBlog);
 
     const {id} = useParams() 
-    const params = useParams()
-    let blog =  getAllBlog.find(blog=>blog.id === id)
+    
+    
 
+    const getAllBlogs = async () => {
+      setLoading(true);
+      try {
+        const productTemp = await getDoc(doc(fireDb, "blogPost", id))
+        if (productTemp.exists()) {
+          setGetBlog(productTemp.data());
+          console.log(getBlog);
+        } else {
+          console.log("Document does not exist")
+        }
+        setLoading(false)
+      } catch (error) {
+        console.log(error)
+        setLoading(false)
+      }
+    }
+    useEffect(() => {
+      getAllBlogs();
+      window.scrollTo(0, 0)
+    }, []);
 
     const addComment = async () => {
-        const commentRef = collection(fireDb, "blogPost/" + `${params.id}/` + "comment")
+        const commentRef = collection(fireDb, "blogPost/" + `${id}/` + "comment")
         try {
           await addDoc(
             commentRef, {
@@ -59,7 +78,7 @@ const BlogPage = () => {
     const getcomment = async () => {
         try {
           const q = query(
-            collection(fireDb, "blogPost/" + `${params.id}/` + "comment/"),
+            collection(fireDb, "blogPost/" + `${id}/` + "comment/"),
             orderBy('time')
           );
           const data = onSnapshot(q, (QuerySnapshot) => {
@@ -94,21 +113,26 @@ const BlogPage = () => {
   return (
     <section className='section-container'>
         
-        {blog && !loading ?
-
+        {loading ?
+                // {"Loader"}
+            <div className='flex justify-center'><img src="/images/loading-icon.svg" alt="loading-icon" /></div>
+            :
             <div >
+                {/* back button */}
                 <Link className='flex justify-center items-center gap-1 bg-gray-400 w-32 rounded-xl mt-4' to='/blog'>
                     <span className='font-bold text-xl '>	&#x2B05;</span>
                     <p className='text-[#e3e3ff] hover:text-[#5d5dea]'>Go Back</p>
                 </Link>
-                <h1 className='text-2xl sm:text-4xl md:text-5xl font-bold text-center my-10'>{blog.blogs.title}</h1>
+                {/* titile */}
+                <h1 className='text-2xl sm:text-4xl md:text-5xl font-bold text-center my-10'>{getBlog?.blogs?.title}</h1>
+                {/* thumbnail, category date */}
                 <div className='px-4 sm:px-6 md:px-10 lg:px-20'>
-                    <img className='w-full mx-auto'  src={blog.thumbnail} alt="" />
+                    <img className='w-full mx-auto'  src={getBlog?.thumbnail} alt="" />
                     <div className='flex items-center gap-3 text-[#929292] '>
-                        <p className='font-RobotoCondensed capitalize font-medium '>{blog.blogs.category}</p>
+                        <p className='font-RobotoCondensed capitalize font-medium '>{getBlog?.blogs?.category}</p>
                         <div className='flex gap-1'>
-                            <img width='14px'  src="images/time-gray.svg" alt="hours" />
-                            <span className='text-sm'>{blog.date}</span>
+                            <img width='14px'  src="/images/time-gray.svg" alt="hours" />
+                            <span className='text-sm'>{getBlog?.date}</span>
                         </div>
                     </div>
                 </div>
@@ -146,14 +170,14 @@ const BlogPage = () => {
 
                             [&>img]:rounded-lg
                             `}
-                            dangerouslySetInnerHTML={createMarkup(blog.blogs.content)}>
+                            dangerouslySetInnerHTML={createMarkup(getBlog?.blogs?.content)}>
                             </div>
                         </div>
 
                 
             </div>
-            :
-            <div className='flex justify-center'><img src="images/loading-icon.svg" alt="loading-icon" /></div>
+            
+            
         }
         <Comments
          addComment={addComment}

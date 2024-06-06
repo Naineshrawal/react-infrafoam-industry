@@ -10,7 +10,7 @@ function Layout() {
     <>
         <Header />     
             <Outlet/>
-            <Scrolltotop/>
+              <Scrolltotop/>
             <Toaster/>
         <Footer/>
     </>
