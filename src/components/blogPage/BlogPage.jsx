@@ -21,7 +21,8 @@ const BlogPage = () => {
     const [fullName, setFullName] = useState("")
     const [commentText, setCommentText] = useState("")
     const [allComment, setAllComment] = useState([])
-    console.log(getBlog);
+    
+    
 
     const {id} = useParams() 
     
@@ -33,7 +34,7 @@ const BlogPage = () => {
         const productTemp = await getDoc(doc(fireDb, "blogPost", id))
         if (productTemp.exists()) {
           setGetBlog(productTemp.data());
-          console.log(getBlog);
+          
         } else {
           console.log("Document does not exist")
         }
@@ -46,10 +47,11 @@ const BlogPage = () => {
     useEffect(() => {
       getAllBlogs();
       window.scrollTo(0, 0)
+      getcomment()
     }, []);
 
     const addComment = async () => {
-        const commentRef = collection(fireDb, "blogPost/" + `${id}/` + "comment")
+        const commentRef =  collection(fireDb, "blogPost/" + `${id}/` + "comment")
         try {
           await addDoc(
             commentRef, {
@@ -66,6 +68,7 @@ const BlogPage = () => {
             )
           })
           toast.success('Comment Add Successfully');
+          
           setFullName("")
           setCommentText("")
         } catch (error) {
@@ -94,10 +97,7 @@ const BlogPage = () => {
           console.log(error)
         }
       }
-      
-      useEffect(() => {
-        getcomment()
-      }, []);
+     
         
         
     
@@ -123,11 +123,12 @@ const BlogPage = () => {
                     <span className='font-bold text-xl '>	&#x2B05;</span>
                     <p className='text-[#e3e3ff] hover:text-[#5d5dea]'>Go Back</p>
                 </Link>
+                
                 {/* titile */}
                 <h1 className='text-2xl sm:text-4xl md:text-5xl font-bold text-center my-10'>{getBlog?.blogs?.title}</h1>
                 {/* thumbnail, category date */}
                 <div className='px-4 sm:px-6 md:px-10 lg:px-20'>
-                    <img className='w-full mx-auto'  src={getBlog?.thumbnail} alt="" />
+                    <img className='w-full mx-auto'  src={getBlog?.thumbnail} alt="blog thumbnail" />
                     <div className='flex items-center gap-3 text-[#929292] '>
                         <p className='font-RobotoCondensed capitalize font-medium '>{getBlog?.blogs?.category}</p>
                         <div className='flex gap-1'>
@@ -172,7 +173,8 @@ const BlogPage = () => {
                             `}
                             dangerouslySetInnerHTML={createMarkup(getBlog?.blogs?.content)}>
                             </div>
-                        </div>
+                            
+                </div>
 
                 
             </div>
@@ -186,7 +188,8 @@ const BlogPage = () => {
          fullName = {fullName}
          setFullName = {setFullName}
          allComment = {allComment}
-
+         
+         
         />
     </section>
   )

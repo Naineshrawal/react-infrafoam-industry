@@ -10,6 +10,8 @@ function Comments({
         allComment,
         fullName,
         setFullName,
+        
+        
 }) {
   const context = useContext(MyContext);
   const { mode } = context;
@@ -17,6 +19,7 @@ function Comments({
     <section className=" py-8 lg:py-16">
       <div  className="max-w-2xl mx-auto px-4">
         <div  className="flex justify-between items-center mb-3">
+        
           <h2 className="text-lg lg:text-2xl font-bold" style={{ color: mode === 'dark' ? 'white' : 'black' }}>
             Make Comment
           </h2>
@@ -70,6 +73,7 @@ function Comments({
           {/* Button  */}
           <div className="">
           <button className='p-2' 
+                type='button'
                 onClick={addComment}
                 style={{
               background: mode === 'dark'
